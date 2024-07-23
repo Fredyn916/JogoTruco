@@ -14,10 +14,10 @@ namespace JogoDeCartas
         {
             BaralhoCaralho = new List<Carta>();
 
-            BaralhoCaralho.Add(new Carta(3, "Ás", "Espadas"));
-            BaralhoCaralho.Add(new Carta(7, "Ás", "Copas"));
-            BaralhoCaralho.Add(new Carta(7, "Ás", "Ouros"));
-            BaralhoCaralho.Add(new Carta(7, "Ás", "Paus"));
+            BaralhoCaralho.Add(new Carta(3, "A", "Espadas"));
+            BaralhoCaralho.Add(new Carta(7, "A", "Copas"));
+            BaralhoCaralho.Add(new Carta(7, "A", "Ouros"));
+            BaralhoCaralho.Add(new Carta(7, "A", "Paus"));
 
             BaralhoCaralho.Add(new Carta(6, "2", "Espadas"));
             BaralhoCaralho.Add(new Carta(6, "2", "Copas"));
@@ -64,20 +64,26 @@ namespace JogoDeCartas
             BaralhoCaralho.Add(new Carta(0, "10", "Ouros"));
             BaralhoCaralho.Add(new Carta(0, "10", "Paus"));
 
-            BaralhoCaralho.Add(new Carta(9, "Valete", "Espadas"));
-            BaralhoCaralho.Add(new Carta(9, "Valete", "Copas"));
-            BaralhoCaralho.Add(new Carta(9, "Valete", "Ouros"));
-            BaralhoCaralho.Add(new Carta(9, "Valete", "Paus"));
+            BaralhoCaralho.Add(new Carta(9, "J", "Espadas"));
+            BaralhoCaralho.Add(new Carta(9, "J", "Copas"));
+            BaralhoCaralho.Add(new Carta(9, "J", "Ouros"));
+            BaralhoCaralho.Add(new Carta(9, "J", "Paus"));
 
-            BaralhoCaralho.Add(new Carta(10, "Rainha", "Espadas"));
-            BaralhoCaralho.Add(new Carta(10, "Rainha", "Copas"));
-            BaralhoCaralho.Add(new Carta(10, "Rainha", "Ouros"));
-            BaralhoCaralho.Add(new Carta(10, "Rainha", "Paus"));
+            BaralhoCaralho.Add(new Carta(10, "Q", "Espadas"));
+            BaralhoCaralho.Add(new Carta(10, "Q", "Copas"));
+            BaralhoCaralho.Add(new Carta(10, "Q", "Ouros"));
+            BaralhoCaralho.Add(new Carta(10, "Q", "Paus"));
 
-            BaralhoCaralho.Add(new Carta(8, "Rei", "Espadas"));
-            BaralhoCaralho.Add(new Carta(8, "Rei", "Copas"));
-            BaralhoCaralho.Add(new Carta(8, "Rei", "Ouros"));
-            BaralhoCaralho.Add(new Carta(8, "Rei", "Paus"));
+            BaralhoCaralho.Add(new Carta(8, "K", "Espadas"));
+            BaralhoCaralho.Add(new Carta(8, "K", "Copas"));
+            BaralhoCaralho.Add(new Carta(8, "K", "Ouros"));
+            BaralhoCaralho.Add(new Carta(8, "K", "Paus"));
+        }
+
+        public void EmbaralharBaralho()
+        {
+            Random random = new Random();
+            BaralhoCaralho = BaralhoCaralho.OrderBy(x => random.Next()).ToList();
         }
     }
 }

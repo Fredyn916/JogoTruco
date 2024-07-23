@@ -18,5 +18,26 @@ namespace JogoDeCartas
             NumOuCarta = numCarta;
             Naipe = naipe;
         }
+
+        public void ExibirCarta()
+        {
+            Console.WriteLine($"| {NumOuCarta} - {ConverterNaipeParaSimbolo()} | ");
+        }
+
+        public string ConverterNaipeParaSimbolo()
+        {
+            switch (Naipe)
+            {
+                case "Espadas":
+                    return "♠";
+                case "Paus":
+                    return "♣";
+                case "Ouros":
+                    return "♦";
+                case "Copas":
+                    return "♥";
+            }
+            return Naipe;
+        }
     }
 }
