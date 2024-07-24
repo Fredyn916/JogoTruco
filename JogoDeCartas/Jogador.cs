@@ -9,7 +9,7 @@ namespace JogoDeCartas
     public class Jogador
     {
         public int Id { get; set; }
-        public List<Carta> Mao { get; set; }
+        public List<Carta> Mao = new List<Carta>();
 
         public Jogador(int id)
         {

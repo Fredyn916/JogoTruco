@@ -25,6 +25,7 @@ namespace JogoDeCartas
         public int PontosDupla2 { get; set; }
         public int TentoDupla1 { get; set; }
         public int TentoDupla2 { get; set; }
+        public int CartaFazendo = 0;
 
         public Truco()
         {
@@ -39,18 +40,13 @@ namespace JogoDeCartas
         public void JogarTruco()
         {
             EscolherDuplasAleatoriamente();
-            for (int i = 0; i < 2; i++)
-            {
-                Console.WriteLine($"<--- DUPLA 1 --->");
-                Console.WriteLine($"Jogador {Dupla1[0].Id} e Jogador {Dupla1[1].Id}");
-                Console.WriteLine($"<--------------->");
-            }
-            for (int i = 0; i < 2; i++)
-            {
-                Console.WriteLine($"<--- DUPLA 2 --->");
-                Console.WriteLine($"Jogador {Dupla2[0].Id} e Jogador {Dupla2[1].Id}");
-                Console.WriteLine($"<--------------->");
-            }
+            Console.WriteLine($"<--- DUPLA 1 --->");
+            Console.WriteLine($"Jogador {Dupla1[0].Id} e Jogador {Dupla1[1].Id}");
+            Console.WriteLine($"<--------------->");
+
+            Console.WriteLine($"<--- DUPLA 2 --->");
+            Console.WriteLine($"Jogador {Dupla2[0].Id} e Jogador {Dupla2[1].Id}");
+            Console.WriteLine($"<--------------->");
             PreencherJogadores();
             while (TentoDupla1 <= 10 || TentoDupla2 <= 10)
             {
@@ -60,6 +56,10 @@ namespace JogoDeCartas
                 {
                     Baralho.EmbaralharBaralho();
                     DistribuirCartas(Baralho);
+                    for (int i = 0; i < 4; i++)
+                    {
+                        MaiorCarta(RodadaJogador(JogaresRodada[i]));
+                    }
                 }
             }
         }
@@ -97,23 +97,23 @@ namespace JogoDeCartas
             foreach (Carta carta in b.BaralhoCaralho)
             {
                 contador++;
-                if (contador > 0 || contador < 4)
+                if (contador == 1 || contador == 2 || contador == 3)
                 {
                     Dupla1[0].Mao.Add(carta);
                 }
-                else if (contador > 3 || contador < 7)
+                else if (contador == 4 || contador == 5 || contador == 6)
                 {
                     Dupla2[0].Mao.Add(carta);
                 }
-                else if (contador > 6 || contador < 10)
+                else if (contador == 7 || contador == 8 || contador == 9)
                 {
                     Dupla1[1].Mao.Add(carta);
                 }
-                else if (contador > 11 || contador < 15)
+                else if (contador == 10 || contador == 11 || contador == 12)
                 {
                     Dupla2[1].Mao.Add(carta);
                 }
-                if(contador == 15)
+                if (contador == 15)
                 {
                     break;
                 }
@@ -147,13 +147,33 @@ namespace JogoDeCartas
             {
                 NumCarta = int.Parse(Console.ReadLine());
 
-                if(NumCarta != 1 && NumCarta != 2 && NumCarta != 3)
+                if (NumCarta != 1 && NumCarta != 2 && NumCarta != 3)
                 {
                     Console.WriteLine("Digite um número válido");
                 }
             }
+            if (NumCarta == 1)
+            {
+                ValorCarta = MaoArray[0].Id;
+            }
+            else if (NumCarta == 2)
+            {
+                ValorCarta = MaoArray[1].Id;
+            }
+            else if (NumCarta == 3)
+            {
+                ValorCarta = MaoArray[2].Id;
+            }
 
             return ValorCarta;
+        }
+
+        public void MaiorCarta(int ForcaCarta)
+        {
+            if (ForcaCarta > CartaFazendo)
+            {
+                CartaFazendo = ForcaCarta;
+            }
         }
     }
 }
