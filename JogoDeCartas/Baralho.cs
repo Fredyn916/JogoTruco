@@ -49,21 +49,6 @@ namespace JogoDeCartas
             BaralhoCaralho.Add(new Carta(4, "7", "Ouros"));
             BaralhoCaralho.Add(new Carta(11, "7", "Paus"));
 
-            BaralhoCaralho.Add(new Carta(0, "8", "Espadas"));
-            BaralhoCaralho.Add(new Carta(0, "8", "Copas"));
-            BaralhoCaralho.Add(new Carta(0, "8", "Ouros"));
-            BaralhoCaralho.Add(new Carta(0, "8", "Paus"));
-
-            BaralhoCaralho.Add(new Carta(0, "9", "Espadas"));
-            BaralhoCaralho.Add(new Carta(0, "9", "Copas"));
-            BaralhoCaralho.Add(new Carta(0, "9", "Ouros"));
-            BaralhoCaralho.Add(new Carta(0, "9", "Paus"));
-
-            BaralhoCaralho.Add(new Carta(0, "10", "Espadas"));
-            BaralhoCaralho.Add(new Carta(0, "10", "Copas"));
-            BaralhoCaralho.Add(new Carta(0, "10", "Ouros"));
-            BaralhoCaralho.Add(new Carta(0, "10", "Paus"));
-
             BaralhoCaralho.Add(new Carta(9, "J", "Espadas"));
             BaralhoCaralho.Add(new Carta(9, "J", "Copas"));
             BaralhoCaralho.Add(new Carta(9, "J", "Ouros"));

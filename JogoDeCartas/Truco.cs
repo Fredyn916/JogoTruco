@@ -138,7 +138,7 @@ namespace JogoDeCartas
             foreach (Carta c in j.Mao)
             {
                 Contador++;
-                Console.WriteLine($"{c.ExibirCarta}= {Contador}");
+                Console.WriteLine($"{c.ExibirCarta()}= {Contador}");
             }
             Console.WriteLine($"<----------->");
             Carta[] MaoArray = j.Mao.ToArray();

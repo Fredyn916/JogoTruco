@@ -19,9 +19,9 @@ namespace JogoDeCartas
             Naipe = naipe;
         }
 
-        public void ExibirCarta()
+        public string ExibirCarta()
         {
-            Console.WriteLine($"| {NumOuCarta} - {ConverterNaipeParaSimbolo()} | ");
+            return $"| {NumOuCarta} - {ConverterNaipeParaSimbolo()} | ";
         }
 
         public string ConverterNaipeParaSimbolo()
